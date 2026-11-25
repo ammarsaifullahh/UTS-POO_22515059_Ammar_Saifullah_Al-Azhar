@@ -61,4 +61,8 @@ public class KantorEkspedisi {
     public SortedListPaket getDaftarPaket() {
         return daftarPaket;
     }
+
+    public Pengiriman getPengiriman(String resi) {
+        return daftarPengiriman.get(resi);
+    }
 }

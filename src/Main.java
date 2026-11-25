@@ -80,7 +80,7 @@ public class Main {
         String tujuan = tanya("Kota tujuan");
         String alamatTujuan = tanya("Alamat tujuan");
         double berat = bacaAngka("Berat (kg)");
-        if (berat <= 0) {
+        if (!(berat > 0)) {
             System.out.println("Berat harus lebih dari 0.");
             return null;
         }

@@ -19,7 +19,7 @@ public class Pengiriman {
         this.paket = paket;
         this.riwayatStatus = new String[KAPASITAS];
         this.jumlahRiwayat = 0;
-        this.riwayatStatus[this.jumlahRiwayat++] = paket.getStatus(); // DIBUAT
+        this.riwayatStatus[this.jumlahRiwayat++] = paket.getStatus();
     }
 
     public boolean tambahRiwayat(String status) {

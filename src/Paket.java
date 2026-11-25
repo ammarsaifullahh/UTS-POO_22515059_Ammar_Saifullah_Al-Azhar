@@ -19,8 +19,8 @@ public class Paket {
         this.nomorResi = require(nomorResi, "Nomor resi");
         this.tujuan = require(tujuan, "Tujuan");
         this.alamatTujuan = require(alamatTujuan, "Alamat tujuan");
-        if (berat <= 0) throw new IllegalArgumentException("Berat harus > 0");
-        if (tarifPerKg < 0) throw new IllegalArgumentException("Tarif tidak boleh negatif");
+        if (!(berat > 0)) throw new IllegalArgumentException("Berat harus > 0");
+        if (!(tarifPerKg >= 0)) throw new IllegalArgumentException("Tarif tidak boleh negatif");
         if (pengirim == null) throw new IllegalArgumentException("Pengirim wajib diisi");
         this.berat = berat;
         this.tarifPerKg = tarifPerKg;

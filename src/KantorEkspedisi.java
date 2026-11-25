@@ -13,7 +13,7 @@ public class KantorEkspedisi {
             throw new IllegalArgumentException("Nama kantor wajib diisi");
         if (alamatKantor == null || alamatKantor.isBlank())
             throw new IllegalArgumentException("Alamat kantor wajib diisi");
-        if (tarifPerKg < 0)
+        if (!(tarifPerKg >= 0))
             throw new IllegalArgumentException("Tarif tidak boleh negatif");
         this.namaKantor = namaKantor.trim();
         this.alamatKantor = alamatKantor.trim();
@@ -42,6 +42,7 @@ public class KantorEkspedisi {
     }
 
     public boolean prosesStatus(String resi, String statusBaru, String tanggal) {
+        if (tanggal == null || tanggal.isBlank()) return false;
         Paket paket = daftarPaket.search(resi);
         if (paket == null) return false;
         Pengiriman pengiriman = daftarPengiriman.get(resi);
